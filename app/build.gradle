@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.sskj.rxkotlin"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //Android Support
+    implementation "com.android.support:support-v4:${android_support_version}"
+    implementation "com.android.support:appcompat-v7:${android_support_version}"
+    implementation "com.android.support:recyclerview-v7:${android_support_version}"
+    implementation "com.android.support:design:${android_support_version}"
+    implementation "com.android.support:cardview-v7:${android_support_version}"
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    // Support-v4 (only Anko Commons)
+    implementation "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
+    // RxKotlin and RxAndroid
+    implementation "io.reactivex.rxjava2:rxkotlin:$rx_kotlin_version"
+    implementation "io.reactivex.rxjava2:rxandroid:${rx_android_version}"
+    //Retrofit
+    implementation "com.squareup.okhttp3:okhttp:${ok_http_version}"
+    implementation "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${ok_http_version}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofit_version}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${retrofit_version}"
+    //Dagger2
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    //RxLifecycle
+    implementation "com.trello:rxlifecycle-kotlin:$rx_lifecycle_version"
+    implementation "com.trello:rxlifecycle-components:$rx_lifecycle_version"
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    //Circle ImageView
+    implementation "de.hdodenhof:circleimageview:${circle_imageView_version}"
+    //Take Photo
+    implementation "com.jph.takephoto:takephoto_library:${take_photo_version}"
+    //Alert View
+    implementation "com.bigkoo:alertview:${alert_view_version}"
+    //底部导航
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
+
+    //上下拉刷新
+    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    //Kotlin Bus
+    implementation 'com.eightbitlab:rxbus:1.0.2'
+    //FlowLayout
+    implementation 'com.zhy:flowlayout-lib:1.0.3'
+    //BadgeView
+    implementation 'q.rorbin:badgeview:1.1.2'
+}
